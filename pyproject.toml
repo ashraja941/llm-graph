@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "llm-graph"
+version = "0.1.0"
+description = "Creating LangGraph from scratch"
+authors = ["ash <ashraja941@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
