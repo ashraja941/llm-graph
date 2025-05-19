@@ -2,7 +2,7 @@ import os
 import shutil
 import pytest
 from unittest.mock import MagicMock, patch
-from llm_graph.ChatModels.ChatopenAI import ChatOpenAI
+from llm_graph.ChatModels.chatopenAI import ChatOpenAI
 
 # Fixture to handle .env backup/removal and restoration
 @pytest.fixture(autouse=True)
@@ -42,7 +42,7 @@ class TestChatOpenAIInvoke:
         mock_response = MagicMock()
         mock_response.output_text = "mocked response"
 
-        with patch("llm_graph.ChatModels.ChatopenAI.OpenAI") as MockOpenAI:
+        with patch("llm_graph.ChatModels.chatopenAI.OpenAI") as MockOpenAI:
             mock_client = MockOpenAI.return_value
             mock_client.responses.create.return_value = mock_response
 

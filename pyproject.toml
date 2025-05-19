@@ -9,6 +9,8 @@ readme = "README.md"
 python = "^3.11"
 openai = "^1.78.1"
 pytest = "^8.3.5"
+groq = "^0.24.0"
+pydantic = "^2.11.4"
 
 
 [build-system]
