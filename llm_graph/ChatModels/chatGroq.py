@@ -1,5 +1,10 @@
 import os
+from typing import Union
 from groq import Groq
+
+from llm_graph.messages.ai import AIMessage
+from llm_graph.messages.base import BaseMessage
+from llm_graph.messages.human import HumanMessage
 
 class ChatGroq():
     def __init__(self) -> None:
@@ -10,13 +15,10 @@ class ChatGroq():
         self.client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
         self.model = "llama-3.3-70b-versatile"
 
-    def invoke(self,message) -> str:
+    def invoke(self,message:Union[BaseMessage,AIMessage,HumanMessage]) -> str:
         chat_completion = self.client.chat.completions.create(
             messages = [
-                {
-                    "role" : "user",
-                    "content" : message
-                }
+                message.to_dict(),
             ],
             model = self.model
         )

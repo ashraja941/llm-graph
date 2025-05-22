@@ -63,3 +63,13 @@ def test_invalid_content_type():
     assert errors[0]['loc'] == ('content',)
     assert errors[0]['type'] == 'string_type'
     assert 'Input should be a valid string' in errors[0]['msg']
+
+def test_dict_function():
+    msg = BaseMessage(content="Hi",role="User")
+    msg_dict = msg.to_dict()
+
+    test_msg_result = {
+            "content" : "Hi",
+            "role" : "User"
+            }
+    assert test_msg_result == msg_dict

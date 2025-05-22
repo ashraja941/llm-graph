@@ -1,4 +1,5 @@
+from typing import Literal
 from llm_graph.messages.base import BaseMessage
 
 class AIMessage(BaseMessage):
-    role : str = "AI"
+    role : Literal["ai"] = Field("ai")
