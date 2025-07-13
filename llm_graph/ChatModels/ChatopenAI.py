@@ -7,7 +7,7 @@ class ChatOpenAI():
         if not api_key:
             raise EnvironmentError("Missing OPENAI_API_KEY")
 
-        self.client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+        self.client = OpenAI(api_key=api_key)
         self.model = "gpt-4o-mini"
 
     def invoke(self,message):

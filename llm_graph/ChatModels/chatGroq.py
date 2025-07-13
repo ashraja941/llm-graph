@@ -12,7 +12,7 @@ class ChatGroq():
         if not api_key:
             raise EnvironmentError("Missing GROQ_API_KEY")
 
-        self.client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+        self.client = Groq(api_key=api_key)
         self.model = "llama-3.3-70b-versatile"
 
     def invoke(self,message:Union[BaseMessage,AIMessage,HumanMessage]) -> str:
